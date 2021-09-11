@@ -77,6 +77,8 @@ namespace Default
             var tilt = Input["Spaceship/Tilt"].ReadValue<float>();
             var pan = Input["Spaceship/Pan"].ReadValue<float>();
 
+            SetJoystickModel(tilt, pan);
+
             var target = new Vector3()
             {
                 x = tilt * lookSpeed,
@@ -96,7 +98,17 @@ namespace Default
 
             rigidbody.rotation = transform.rotation;
         }
+
+        void SetJoystickModel(float x, float y)
+        {
+            var angles = new Vector3(x, y , -y);
+            angles *= 15;
+            joystick.localEulerAngles = angles;
+        }
         #endregion
+
+        [SerializeField]
+        Transform joystick;
 
         Rigidbody rigidbody;
 
