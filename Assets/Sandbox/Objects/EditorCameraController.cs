@@ -36,12 +36,10 @@ namespace Default
         {
             if (Keyboard[modifier].wasPressedThisFrame)
             {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.Confined;
             }
             else if (Keyboard[modifier].wasReleasedThisFrame)
             {
-                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
 
