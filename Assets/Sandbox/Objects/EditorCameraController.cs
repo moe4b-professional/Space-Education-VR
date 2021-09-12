@@ -34,6 +34,17 @@ namespace Default
 
         void Update()
         {
+            if (Keyboard[modifier].wasPressedThisFrame)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else if (Keyboard[modifier].wasReleasedThisFrame)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
             if (Keyboard[modifier].isPressed)
             {
                 var delta = new Vector2()
