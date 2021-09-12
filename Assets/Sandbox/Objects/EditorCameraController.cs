@@ -50,6 +50,7 @@ namespace Default
                 angles.y += delta.x;
 
                 angles.x = ClampAngle(angles.x, -60, 60);
+                angles.y = ClampAngle(angles.y, -140, 140);
 
                 transform.localEulerAngles = angles;
             }
