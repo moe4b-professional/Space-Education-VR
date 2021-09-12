@@ -127,6 +127,10 @@ namespace Default
         void LateUpdate()
         {
             Look();
+        }
+
+        void FixedUpdate()
+        {
             Move();
         }
 
