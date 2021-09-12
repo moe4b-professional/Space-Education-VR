@@ -17,64 +17,40 @@ using UnityEditorInternal;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
-using Google.XR.Cardboard;
-using UnityEngine.XR.Management;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 namespace Default
 {
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
-	public class Sandbox : MonoBehaviour
-	{
-		public static bool IsInVR
+    public class Sandbox : MonoBehaviour,
+        IPointerClickHandler,
+        IPointerEnterHandler,
+        IPointerDownHandler,
+        IPointerExitHandler,
+        IPointerUpHandler
+    {
+        public void OnPointerClick(PointerEventData eventData)
         {
-			get
-            {
-				return XRGeneralSettings.Instance.Manager.isInitializationComplete;
-			}
+            Debug.Log("Pointer Clicked");
         }
 
-		void Start()
-		{
-			QualitySettings.vSyncCount = 0;
-			//Application.targetFrameRate = 60;
-			Time.fixedDeltaTime = 1f / 60;
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            Debug.Log("Pointer Down");
+        }
 
-			Screen.sleepTimeout = SleepTimeout.NeverSleep;
-			Screen.brightness = 1.0f;
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Debug.Log("Pointer Enter");
+        }
 
-			switch (Application.platform)
-			{
-				case RuntimePlatform.Android:
-				case RuntimePlatform.IPhonePlayer:
-					InitializeVR();
-					break;
-			}
-		}
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Debug.Log("Pointer Exit");
+        }
 
-		void InitializeVR()
-		{
-			StartCoroutine(Coroutine());
-			IEnumerator Coroutine()
-			{
-				var xrManager = XRGeneralSettings.Instance.Manager;
-
-				if (xrManager.isInitializationComplete == false)
-					yield return xrManager.InitializeLoader();
-
-				xrManager.StartSubsystems();
-
-				Api.Recenter();
-			}
-		}
-
-		void Update()
-		{
-			if (IsInVR)
-			{
-				Api.UpdateScreenParams();
-			}
-		}
-	}
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            Debug.Log("Pointer Up");
+        }
+    }
 }
