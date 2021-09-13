@@ -98,17 +98,24 @@ namespace Default
 
             rigidbody.rotation = transform.rotation;
         }
+        #endregion
+
+        #region Joystic
+        [SerializeField]
+        Transform joystick;
 
         void SetJoystickModel(float x, float y)
         {
-            var angles = new Vector3(x, y , -y);
-            angles *= 15;
-            joystick.localEulerAngles = angles;
+            x = Mathf.Clamp(x , -1, 1);
+            y = Mathf.Clamp(y, -1, 1);
+
+            var angles = new Vector3(x, y, -y) * 15;
+            var target = Quaternion.Euler(angles);
+
+            joystick.localRotation = Quaternion.RotateTowards(joystick.localRotation, target, 180f * Time.deltaTime);
         }
         #endregion
 
-        [SerializeField]
-        Transform joystick;
 
         Rigidbody rigidbody;
 
