@@ -21,36 +21,8 @@ using UnityEngine.EventSystems;
 
 namespace Default
 {
-    public class Sandbox : MonoBehaviour,
-        IPointerClickHandler,
-        IPointerEnterHandler,
-        IPointerDownHandler,
-        IPointerExitHandler,
-        IPointerUpHandler
+    public class Sandbox : MonoBehaviour
     {
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Clicked");
-        }
-
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Down");
-        }
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Enter");
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Exit");
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Up");
-        }
+        
     }
 }
