@@ -2057,8 +2057,10 @@ MonoBehaviour:
   model: {fileID: 1996034802}
   moveSpeed: 10
   moveAcceleration: 10
+  moveSmoothTime: 1
   lookSpeed: 119.99998
-  lookAcceleration: 119.99998
+  lookAcceleration: 30
+  lookSmoothTime: 0.2
   rollFactor: 20
   joystick: {fileID: 1044766173}
 --- !u!54 &735352256

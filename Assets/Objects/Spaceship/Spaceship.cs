@@ -39,6 +39,8 @@ namespace Default
 
         [SerializeField]
         float moveAcceleration = 15f;
+        [SerializeField]
+        float moveSmoothTime;
 
         Vector3 moveVelocity;
 
@@ -48,10 +50,7 @@ namespace Default
 
             var target = transform.forward * power * moveSpeed;
 
-            moveVelocity = rigidbody.velocity;
-            moveVelocity = Vector3.MoveTowards(moveVelocity, target, moveAcceleration * Time.deltaTime);
-
-            rigidbody.velocity = moveVelocity;
+            rigidbody.velocity = Vector3.SmoothDamp(rigidbody.velocity, target, ref moveVelocity, moveSmoothTime, moveAcceleration, Time.fixedDeltaTime);
         }
         #endregion
 
@@ -62,11 +61,14 @@ namespace Default
 
         [SerializeField]
         float lookAcceleration = 5f;
+        [SerializeField]
+        float lookSmoothTime;
 
         [SerializeField]
         float rollFactor;
 
         Vector3 lookDelta;
+        Vector3 lookVelocity;
 
         void Look()
         {
@@ -89,7 +91,7 @@ namespace Default
                 y = pan * lookSpeed,
             };
 
-            lookDelta = Vector3.MoveTowards(lookDelta, target, lookAcceleration * Time.deltaTime);
+            lookDelta = Vector3.SmoothDamp(lookDelta, target, ref lookVelocity, lookSmoothTime, lookSpeed);
 
             var up = Vector3.Scale(transform.up, Vector3.up);
             transform.Rotate(up, lookDelta.y * Time.deltaTime, Space.World);
