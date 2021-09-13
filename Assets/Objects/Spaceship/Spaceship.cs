@@ -77,6 +77,14 @@ namespace Default
             var tilt = Input["Spaceship/Tilt"].ReadValue<float>();
             var pan = Input["Spaceship/Pan"].ReadValue<float>();
 
+#if UNITY_EDITOR
+            if(Keyboard.current[Key.LeftAlt].isPressed)
+            {
+                tilt = 0f;
+                pan = 0f;
+            }
+#endif
+
             SetJoystickModel(tilt, pan);
 
             var target = new Vector3()
