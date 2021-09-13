@@ -124,7 +124,6 @@ namespace Default
         }
         #endregion
 
-
         Rigidbody rigidbody;
 
         void Awake()
