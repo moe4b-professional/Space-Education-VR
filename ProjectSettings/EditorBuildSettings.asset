@@ -8,8 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sandbox/Sandbox.unity
     guid: 02f9c2120e505b840ae0794bc0fc9178
-  - enabled: 1
-    path: Assets/Samples/Hello Cardboard/Scenes/HelloCardboard.unity
-    guid: 145a2a45d7bc746b19cb68410368bf96
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 52b66c5586d773442941069df32411cd, type: 2}

@@ -23,6 +23,10 @@ namespace Default
 {
     public class Sandbox : MonoBehaviour
     {
-        
+        [RuntimeInitializeOnLoadMethod]
+        public static void OnLoad()
+        {
+            Application.targetFrameRate = 60;
+        }
     }
 }

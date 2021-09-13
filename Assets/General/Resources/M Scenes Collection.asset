@@ -19,9 +19,3 @@ MonoBehaviour:
     id: Sandbox
     index: 0
     path: Assets/Sandbox/Sandbox.unity
-  - asset: {fileID: 102900000, guid: 145a2a45d7bc746b19cb68410368bf96, type: 3}
-    registered: 1
-    active: 1
-    id: HelloCardboard
-    index: 1
-    path: Assets/Samples/Hello Cardboard/Scenes/HelloCardboard.unity
