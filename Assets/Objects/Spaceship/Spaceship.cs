@@ -28,10 +28,6 @@ namespace Default
         InputActionAsset input = default;
         public InputActionAsset Input => input;
 
-        public Vector3 Forward => transform.forward;
-        public Vector3 Right => transform.right;
-        public Vector3 Up => transform.up;
-
         [SerializeField]
         GameObject model;
 
@@ -50,7 +46,7 @@ namespace Default
         {
             var power = Input["Spaceship/Power"].ReadValue<float>();
 
-            var target = Forward * power * moveSpeed;
+            var target = transform.forward * power * moveSpeed;
 
             moveVelocity = rigidbody.velocity;
             moveVelocity = Vector3.MoveTowards(moveVelocity, target, moveAcceleration * Time.deltaTime);
@@ -95,7 +91,8 @@ namespace Default
 
             lookDelta = Vector3.MoveTowards(lookDelta, target, lookAcceleration * Time.deltaTime);
 
-            transform.Rotate(Vector3.up, lookDelta.y * Time.deltaTime, Space.World);
+            var up = Vector3.Scale(transform.up, Vector3.up);
+            transform.Rotate(up, lookDelta.y * Time.deltaTime, Space.World);
             transform.Rotate(Vector3.right, -lookDelta.x * Time.deltaTime, Space.Self);
 
             {
