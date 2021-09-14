@@ -26,7 +26,7 @@ namespace Default
         [RuntimeInitializeOnLoadMethod]
         public static void OnLoad()
         {
-            Application.targetFrameRate = 60;
+
         }
     }
 }

@@ -23,6 +23,9 @@ namespace Default
 {
 	public class SpaceVRCore : MonoBehaviour
 	{
+		[SerializeField]
+		int targetFPS = 60;
+
 		public static bool IsInVR
 		{
 			get
@@ -34,8 +37,8 @@ namespace Default
 		void Start()
 		{
 			QualitySettings.vSyncCount = 0;
-			//Application.targetFrameRate = 60;
-			Time.fixedDeltaTime = 1f / 60;
+			Application.targetFrameRate = targetFPS;
+			Time.fixedDeltaTime = 1f / targetFPS;
 
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 			Screen.brightness = 1.0f;
