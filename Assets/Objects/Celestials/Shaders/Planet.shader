@@ -35,8 +35,11 @@ Shader "Crying Suns/Planet"
         float4 diff : COLOR0;
     };
 
-    float4 ComputeLight0(float3 worldNormal) {
-        half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
+    float4 ComputeLight1(float3 worldPosition, float3 worldNormal)
+    {
+        float3 direction = normalize(_WorldSpaceLightPos0 - worldPosition);
+
+        half nl = max(0, dot(worldNormal, direction));
         float4 diff = nl * _LightColor0 * 0.5;
         diff.rgb += ShadeSH9(half4(worldNormal, 1));
         return diff;
@@ -61,7 +64,7 @@ Shader "Crying Suns/Planet"
         Tags { "Queue"="Transparent" }
 
         Pass {
-            Tags { "LightMode" = "ForwardBase" }
+            Tags { "LightMode" = "ForwardAdd" }
 
             Name "OUTER_ATMOSPHERE"
 
@@ -81,7 +84,7 @@ Shader "Crying Suns/Planet"
                 o.vertex = UnityObjectToClipPos(v.vertex + v.normal * _AtmosDistance);
                 o.viewDir = normalize(WorldSpaceViewDir(v.vertex));
                 o.uv = float2(0, 0);
-                o.diff = ComputeLight0(o.normal);
+                o.diff = ComputeLight1(mul(unity_ObjectToWorld, v.vertex), o.normal);
                 return o;
             }
 
@@ -101,7 +104,7 @@ Shader "Crying Suns/Planet"
 
         Pass
         {
-            Tags { "LightMode" = "ForwardBase" }
+            Tags { "LightMode" = "ForwardAdd" }
 
             Name "GROUND"
 
@@ -126,7 +129,7 @@ Shader "Crying Suns/Planet"
                 o.normal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = normalize(WorldSpaceViewDir(v.vertex));
 
-                o.diff = ComputeLight0(o.normal);
+                o.diff = ComputeLight1(mul(unity_ObjectToWorld, v.vertex), o.normal);
                 return o;
             }
 
@@ -184,7 +187,7 @@ Shader "Crying Suns/Planet"
 
         Pass
         {
-            Tags { "LightMode" = "ForwardBase" }
+            Tags { "LightMode" = "ForwardAdd" }
 
             Name "CITIES"
 
@@ -210,13 +213,13 @@ Shader "Crying Suns/Planet"
                 o.uv = TRANSFORM_TEX(uv, _MainTex);
                 o.normal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = float3(0, 0, 0);
-                o.diff = ComputeLight0(-o.normal);
+                o.diff = ComputeLight1(mul(unity_ObjectToWorld, v.vertex), -o.normal);
                 return o;
             }
 
             fixed4 _CityTint;
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_CityTex, i.uv);
                 col *= _CityTint;
@@ -228,7 +231,7 @@ Shader "Crying Suns/Planet"
         }
 
         Pass {
-            Tags { "LightMode" = "ForwardBase" }
+            Tags { "LightMode" = "ForwardAdd" }
 
             Name "CLOUDS"
 
@@ -256,7 +259,7 @@ Shader "Crying Suns/Planet"
                 o.uv = TRANSFORM_TEX(uv, _MainTex);
                 o.viewDir = normalize(WorldSpaceViewDir(v.vertex));
 
-                o.diff = ComputeLight0(o.normal);
+                o.diff = ComputeLight1(mul(unity_ObjectToWorld, v.vertex), o.normal);
                 return o;
             }
 
@@ -277,7 +280,7 @@ Shader "Crying Suns/Planet"
         }
 
         Pass {
-            Tags { "LightMode" = "ForwardBase" }
+            Tags { "LightMode" = "ForwardAdd" }
 
             Name "INNER_ATMOSPHERE"
 
@@ -297,7 +300,8 @@ Shader "Crying Suns/Planet"
                 o.normal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = normalize(WorldSpaceViewDir(v.vertex));
                 o.uv = float2(0, 0);
-                o.diff = ComputeLight0(o.normal);
+
+                o.diff = ComputeLight1(mul(unity_ObjectToWorld, v.vertex), o.normal);
                 return o;
             }
 
