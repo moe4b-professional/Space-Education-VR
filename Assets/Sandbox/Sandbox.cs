@@ -21,12 +21,22 @@ using UnityEngine.EventSystems;
 
 namespace Default
 {
-    public class Sandbox : MonoBehaviour
+    public class Sandbox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [RuntimeInitializeOnLoadMethod]
         public static void OnLoad()
         {
 
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Debug.Log("Pointer Enter");
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Debug.Log("Pointer Exit");
         }
     }
 }
