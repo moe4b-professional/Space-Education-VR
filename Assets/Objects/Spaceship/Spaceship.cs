@@ -91,7 +91,7 @@ namespace Default
                 y = pan * lookSpeed,
             };
 
-            lookDelta = Vector3.SmoothDamp(lookDelta, target, ref lookVelocity, lookSmoothTime, lookSpeed);
+            lookDelta = Vector3.SmoothDamp(lookDelta, target, ref lookVelocity, lookSmoothTime, lookAcceleration);
 
             var up = Vector3.Scale(transform.up, Vector3.up);
             transform.Rotate(up, lookDelta.y * Time.deltaTime, Space.World);
