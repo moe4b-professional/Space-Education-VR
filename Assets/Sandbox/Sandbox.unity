@@ -345,7 +345,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 1722074586}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.627451, g: 0.28627452, b: 0.17254902, a: 0.54901963}
   line: {fileID: 36638454}
 --- !u!120 &36638454
 LineRenderer:
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   origin: {fileID: 8402815131642514347}
   target: {fileID: 1138357149}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.50980395, g: 0.50980395, b: 0.5019608, a: 0.54901963}
   line: {fileID: 443655626}
 --- !u!120 &443655626
 LineRenderer:
@@ -3166,7 +3166,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 2088212850}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.4901961, g: 0.6431373, b: 0.67058825, a: 0.54901963}
   line: {fileID: 597503003}
 --- !u!120 &597503003
 LineRenderer:
@@ -4180,7 +4180,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 574795989}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.57254905, g: 0.50980395, b: 0.43137258, a: 0.54901963}
   line: {fileID: 1097740132}
 --- !u!120 &1097740132
 LineRenderer:
@@ -5258,7 +5258,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 1790650552}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.26666668, g: 0.41176474, b: 0.67058825, a: 0.54901963}
   line: {fileID: 1226350678}
 --- !u!120 &1226350678
 LineRenderer:
@@ -5565,7 +5565,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 8402815131642514347}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.25490198, g: 0.2784314, b: 0.19215688, a: 0.54901963}
   line: {fileID: 1282316483}
 --- !u!120 &1282316483
 LineRenderer:
@@ -6123,7 +6123,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 1136431700}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.40784317, g: 0.40784317, b: 0.40784317, a: 0.54901963}
   line: {fileID: 1398927321}
 --- !u!120 &1398927321
 LineRenderer:
@@ -6913,7 +6913,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 1276903263}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.75294125, g: 0.7058824, b: 0.61960787, a: 0.54901963}
   line: {fileID: 1815655908}
 --- !u!120 &1815655908
 LineRenderer:
@@ -7552,7 +7552,7 @@ MonoBehaviour:
   origin: {fileID: 894170460}
   target: {fileID: 1659909599}
   segments: 100
-  color: {r: 1, g: 1, b: 1, a: 0.54901963}
+  color: {r: 0.49411768, g: 0.3803922, b: 0.2901961, a: 0.54901963}
   line: {fileID: 2107882448}
 --- !u!120 &2107882448
 LineRenderer:
