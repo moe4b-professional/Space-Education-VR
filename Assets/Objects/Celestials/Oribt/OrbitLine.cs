@@ -56,11 +56,6 @@ namespace Default
             Create();
         }
 
-        void Start()
-        {
-            Create();
-        }
-
         void Create()
         {
             block = new MaterialPropertyBlock();
@@ -73,7 +68,7 @@ namespace Default
 
             for (int i = 0; i < segments; i++)
             {
-                var rate = (i) / 1f / (segments - 1);
+                var rate = i / 1f / (segments - 1);
                 var angle = Mathf.Lerp(0f, 360f, rate);
                 var rotation = Quaternion.Euler(Vector3.up * angle);
                 var direction = rotation * transform.forward;
