@@ -25,14 +25,6 @@ namespace Default
         [SerializeField]
         Transform origin = default;
 
-        public Vector3 GetOriginPosition()
-        {
-            if (origin == null)
-                return Vector3.zero;
-
-            return origin.position;
-        }
-
         [SerializeField]
         Transform target = default;
 
@@ -49,7 +41,7 @@ namespace Default
 
         void Reset()
         {
-            origin = null;
+            origin = transform;
             target = transform;
 
             line = GetComponent<LineRenderer>();
@@ -71,13 +63,11 @@ namespace Default
 
         void Create()
         {
-            var origin = GetOriginPosition();
-
             block = new MaterialPropertyBlock();
             block.SetColor("_Color", color);
             line.SetPropertyBlock(block);
 
-            var radius = Vector3.Distance(origin, target.position);
+            var radius = Vector3.Distance(origin.position, target.position);
 
             line.positionCount = segments;
 
@@ -87,7 +77,7 @@ namespace Default
                 var angle = Mathf.Lerp(0f, 360f, rate);
                 var rotation = Quaternion.Euler(Vector3.up * angle);
                 var direction = rotation * transform.forward;
-                var point = origin + direction * radius;
+                var point = origin.position + direction * radius;
                 point = line.transform.InverseTransformPoint(point);
 
                 line.SetPosition(i, point);
