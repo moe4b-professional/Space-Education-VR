@@ -53,7 +53,7 @@ namespace Default
             target = transform;
 
             line = GetComponent<LineRenderer>();
-            line.useWorldSpace = true;
+            line.useWorldSpace = false;
             line.loop = true;
 
             Create();
@@ -88,6 +88,7 @@ namespace Default
                 var rotation = Quaternion.Euler(Vector3.up * angle);
                 var direction = rotation * transform.forward;
                 var point = origin + direction * radius;
+                point = line.transform.InverseTransformPoint(point);
 
                 line.SetPosition(i, point);
             }
