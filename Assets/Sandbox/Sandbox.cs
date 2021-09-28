@@ -39,4 +39,13 @@ namespace Default
             Debug.Log("Pointer Exit");
         }
     }
+
+    public static class ExtensionMethods
+    {
+        public static void ForAll<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            foreach (var item in source)
+                action(item);
+        }
+    }
 }
