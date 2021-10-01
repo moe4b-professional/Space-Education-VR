@@ -19,9 +19,9 @@ using Random = UnityEngine.Random;
 
 namespace Default
 {
-	[RequireComponent(typeof(LineRenderer))]
-	public class OrbitLine : MonoBehaviour
-	{
+    [RequireComponent(typeof(LineRenderer))]
+    public class OrbitLine : MonoBehaviour
+    {
         [SerializeField]
         Transform origin = default;
 
@@ -91,7 +91,7 @@ namespace Default
 #if UNITY_EDITOR
         [CanEditMultipleObjects]
         [CustomEditor(typeof(OrbitLine))]
-		public class Inspector : Editor
+        public class Inspector : Editor
         {
             public override void OnInspectorGUI()
             {
@@ -102,5 +102,5 @@ namespace Default
             }
         }
 #endif
-	}
+    }
 }
