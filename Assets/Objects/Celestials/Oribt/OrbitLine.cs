@@ -35,9 +35,9 @@ namespace Default
         Color color = Color.white;
 
         MaterialPropertyBlock block;
-
         void UpdateMaterialBlock()
         {
+            block = new MaterialPropertyBlock();
             block.SetColor("_Color", color);
             line.SetPropertyBlock(block);
         }
@@ -62,20 +62,13 @@ namespace Default
             Create();
         }
 
-        void Awake()
-        {
-            block = new MaterialPropertyBlock();
-        }
-
         void Start()
         {
-            UpdateMaterialBlock();
+            Create();
         }
 
         void Create()
         {
-            block = new MaterialPropertyBlock();
-
             UpdateMaterialBlock();
 
             var radius = Vector3.Distance(origin.position, target.position);
