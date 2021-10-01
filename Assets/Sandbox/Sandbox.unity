@@ -4423,7 +4423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5354fe4537c1324d9d048372be10d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetFPS: 120
+  targetFPS:
+    rendering: 60
+    physics: 60
 --- !u!1001 &1136431699
 PrefabInstance:
   m_ObjectHideFlags: 0
