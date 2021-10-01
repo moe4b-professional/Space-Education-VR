@@ -36,6 +36,12 @@ namespace Default
 
         MaterialPropertyBlock block;
 
+        void UpdateMaterialBlock()
+        {
+            block.SetColor("_Color", color);
+            line.SetPropertyBlock(block);
+        }
+
         [SerializeField]
         LineRenderer line;
 
@@ -56,11 +62,21 @@ namespace Default
             Create();
         }
 
+        void Awake()
+        {
+            block = new MaterialPropertyBlock();
+        }
+
+        void Start()
+        {
+            UpdateMaterialBlock();
+        }
+
         void Create()
         {
             block = new MaterialPropertyBlock();
-            block.SetColor("_Color", color);
-            line.SetPropertyBlock(block);
+
+            UpdateMaterialBlock();
 
             var radius = Vector3.Distance(origin.position, target.position);
 
