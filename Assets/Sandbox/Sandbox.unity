@@ -5654,16 +5654,8 @@ PrefabInstance:
       value: Saturn
       objectReference: {fileID: 0}
     - target: {fileID: 3593127100017461679, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593127100017461679, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8013371594222636457, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
