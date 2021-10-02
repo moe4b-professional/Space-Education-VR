@@ -61,6 +61,18 @@ namespace Default
 					InitializeVR();
 					break;
 			}
+
+			//Disable Renderers Shadows & Motion Vectors
+			{
+				var renderers = FindObjectsOfType<Renderer>();
+
+				foreach (var renderer in renderers)
+				{
+					renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+					renderer.receiveShadows = false;
+					renderer.motionVectorGenerationMode = MotionVectorGenerationMode.ForceNoMotion;
+				}
+			}
 		}
 
 		void InitializeVR()
