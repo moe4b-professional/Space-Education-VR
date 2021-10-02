@@ -52,8 +52,12 @@ namespace Default
             Coroutine TransitionCoroutine;
             public Coroutine Transition(float target)
             {
+                if (TransitionCoroutine != null)
+                    celestial.StopCoroutine(TransitionCoroutine);
+
                 TransitionCoroutine = celestial.StartCoroutine(Procedure());
                 return TransitionCoroutine;
+
                 IEnumerator Procedure()
                 {
                     if (target > 0f) group.gameObject.SetActive(true);
@@ -98,7 +102,7 @@ namespace Default
 
         public bool IsSelected => Selection.Current == this;
 
-        void CalcaulateRequirements()
+        void Dependency()
         {
             //Size
             {
@@ -112,13 +116,13 @@ namespace Default
         {
             if (Application.isPlaying) return;
 
-            CalcaulateRequirements();
+            Dependency();
             UI.Setup(this);
         }
 
         void Start()
         {
-            CalcaulateRequirements();
+            Dependency();
             UI.Initiate(this);
         }
 
