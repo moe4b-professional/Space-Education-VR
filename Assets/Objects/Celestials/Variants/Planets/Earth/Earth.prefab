@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 110
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61,6 +61,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_MotionVectors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}

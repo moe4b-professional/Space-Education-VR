@@ -4126,18 +4126,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8247644012576086136, guid: 5163475c3543fcb4096f99ac9b58f542, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8247644012576086136, guid: 5163475c3543fcb4096f99ac9b58f542, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8247644012576086136, guid: 5163475c3543fcb4096f99ac9b58f542, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8960014543755967405, guid: 5163475c3543fcb4096f99ac9b58f542, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4746,18 +4734,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5058865618951562061, guid: 8f9d9e99048d63842a309c13446c81ab, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195300414397513880, guid: 8f9d9e99048d63842a309c13446c81ab, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195300414397513880, guid: 8f9d9e99048d63842a309c13446c81ab, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195300414397513880, guid: 8f9d9e99048d63842a309c13446c81ab, type: 3}
-      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697111872327360736, guid: 8f9d9e99048d63842a309c13446c81ab, type: 3}
@@ -5591,18 +5567,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340225458409960559, guid: 9553f46a245019d41992df33aeba16f4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175783309885887511, guid: 9553f46a245019d41992df33aeba16f4, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175783309885887511, guid: 9553f46a245019d41992df33aeba16f4, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175783309885887511, guid: 9553f46a245019d41992df33aeba16f4, type: 3}
-      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2196879180413876162, guid: 9553f46a245019d41992df33aeba16f4, type: 3}
@@ -6711,30 +6675,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330957489084148152, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 772953772959484525, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 772953772959484525, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 772953772959484525, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711813854994557864, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711813854994557864, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711813854994557864, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
-      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2185253714276215317, guid: 3949a5c4b1f34ba47b1c9ed004fb7759, type: 3}
@@ -8024,18 +7964,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4569221946769920811, guid: d009858b3d73b7d4fb9397868cd01bdf, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569221946769920811, guid: d009858b3d73b7d4fb9397868cd01bdf, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569221946769920811, guid: d009858b3d73b7d4fb9397868cd01bdf, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7515791160233080155, guid: d009858b3d73b7d4fb9397868cd01bdf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8114,18 +8042,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1836829310}
     m_Modifications:
-    - target: {fileID: 531568716497727273, guid: 8ecb4c7215b55dd42a3cba5943df7db4, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 531568716497727273, guid: 8ecb4c7215b55dd42a3cba5943df7db4, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 531568716497727273, guid: 8ecb4c7215b55dd42a3cba5943df7db4, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 670292692988546300, guid: 8ecb4c7215b55dd42a3cba5943df7db4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8301,18 +8217,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 457551079596427400, guid: c91e7275c72e29d4a971173566cf0414, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346591376593398000, guid: c91e7275c72e29d4a971173566cf0414, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346591376593398000, guid: c91e7275c72e29d4a971173566cf0414, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346591376593398000, guid: c91e7275c72e29d4a971173566cf0414, type: 3}
-      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2062038339160492837, guid: c91e7275c72e29d4a971173566cf0414, type: 3}
@@ -9097,18 +9001,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3131797290273402656, guid: 508d582b854e1854c8c30068b0e348d7, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131797290273402656, guid: 508d582b854e1854c8c30068b0e348d7, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131797290273402656, guid: 508d582b854e1854c8c30068b0e348d7, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4584630311337578328, guid: 508d582b854e1854c8c30068b0e348d7, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -9542,18 +9434,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5367979340697196536, guid: f4609d46fc7ec4448aa6388b5791ae83, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5367979340697196536, guid: f4609d46fc7ec4448aa6388b5791ae83, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5367979340697196536, guid: f4609d46fc7ec4448aa6388b5791ae83, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6816027842265053056, guid: f4609d46fc7ec4448aa6388b5791ae83, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -9702,18 +9582,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357412675028810027, guid: f44cd35c6eb4d8340a17316941c3c40c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7159982843722660585, guid: f44cd35c6eb4d8340a17316941c3c40c, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7159982843722660585, guid: f44cd35c6eb4d8340a17316941c3c40c, type: 3}
-      propertyPath: m_MotionVectors
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7159982843722660585, guid: f44cd35c6eb4d8340a17316941c3c40c, type: 3}
-      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7885951653259188540, guid: f44cd35c6eb4d8340a17316941c3c40c, type: 3}

@@ -64,6 +64,18 @@ PrefabInstance:
       value: 4.949
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 4ad618420f5be714d92ac4efa087527e, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4ad618420f5be714d92ac4efa087527e, type: 3}
+      propertyPath: m_MotionVectors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4ad618420f5be714d92ac4efa087527e, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4ad618420f5be714d92ac4efa087527e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9a2479ffc66c8844b6d048b9d1f62e1, type: 2}
@@ -126,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 240
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -179,6 +191,18 @@ PrefabInstance:
     - target: {fileID: 8183281310298590183, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_MotionVectors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8560997702379150854, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_Materials.Array.data[0]
