@@ -28,10 +28,13 @@ namespace Default
         string title = default;
 
         [SerializeField]
+        float size;
+
+        [SerializeField]
         MeshRenderer mesh;
 
-        public float Size { get; private set; }
-        public float SizeRate { get; private set; }
+        [SerializeField]
+        SphereCollider collider;
 
         [SerializeField]
         UIData _UI = default;
@@ -83,24 +86,24 @@ namespace Default
                 }
             }
 
+            internal void Validate(Celestial celestial)
+            {
+                label.text = celestial.title;
+                border.rectTransform.sizeDelta = Vector2.one * 280 / celestial.SizeRate;
+                border.pixelsPerUnitMultiplier = 6 * celestial.SizeRate;
+            }
+
             Celestial celestial;
-            public void Initiate(Celestial reference)
+            public void Start(Celestial reference)
             {
                 celestial = reference;
 
                 group.gameObject.SetActive(false);
                 play.gameObject.SetActive(false);
 
-                Setup(celestial);
+                Validate(celestial);
 
                 play.onClick.AddListener(OnPlay);
-            }
-
-            internal void Setup(Celestial celestial)
-            {
-                label.text = celestial.title;
-                border.rectTransform.sizeDelta = Vector2.one * 280 / celestial.SizeRate;
-                border.pixelsPerUnitMultiplier = 6 * celestial.SizeRate;
             }
 
             public void Select()
@@ -123,30 +126,31 @@ namespace Default
             }
         }
 
+        public float SizeRate { get; private set; }
+
         public bool IsSelected => Selection.Current == this;
 
-        void Dependency()
+        void Validate()
         {
             //Size
             {
-                var scale = mesh.transform.localScale;
-                Size = (scale.x + scale.y + scale.z) / 3f;
-                SizeRate = 20 / Size;
+                mesh.transform.localScale = Vector3.one * size;
+                collider.radius = size / 2f;
+                SizeRate = 20 / size;
             }
+
+            UI.Validate(this);
         }
 
         void OnValidate()
         {
-            if (Application.isPlaying) return;
-
-            Dependency();
-            UI.Setup(this);
+            Validate();
         }
 
         void Start()
         {
-            Dependency();
-            UI.Initiate(this);
+            Validate();
+            UI.Start(this);
         }
 
         public void OnPointerEnter(PointerEventData data)

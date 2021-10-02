@@ -25,7 +25,7 @@ namespace Default
 		Transform target;
 
 		[SerializeField]
-		float distance = 20;
+		internal float distance = 20;
 
 		void OnValidate()
 		{

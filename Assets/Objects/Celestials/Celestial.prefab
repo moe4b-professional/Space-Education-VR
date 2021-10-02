@@ -460,8 +460,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6675887921388646255}
-  - component: {fileID: 5219542070163070359}
   - component: {fileID: 2307424795725165464}
+  - component: {fileID: 5219542070163070359}
   m_Layer: 0
   m_Name: Celestial
   m_TagString: Untagged
@@ -485,6 +485,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2307424795725165464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336094209958786517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c97a0b95169154ea1380bab8f89089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  size: 20
+  mesh: {fileID: 8560997702379150854}
+  collider: {fileID: 5219542070163070359}
+  _UI:
+    group: {fileID: 2850588228671685747}
+    label: {fileID: 2329098604825296619}
+    border: {fileID: 1387641206328678850}
+    play: {fileID: 8572247575108736500}
+    transitionSpeed: 5
 --- !u!135 &5219542070163070359
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -498,25 +520,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2307424795725165464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336094209958786517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c97a0b95169154ea1380bab8f89089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mesh: {fileID: 8560997702379150854}
-  _UI:
-    group: {fileID: 2850588228671685747}
-    label: {fileID: 2329098604825296619}
-    border: {fileID: 1387641206328678850}
-    play: {fileID: 8572247575108736500}
-    transitionSpeed: 5
 --- !u!1 &7914864269896453368
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +598,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Celestial
+  m_Text: 
 --- !u!1 &8016320045345221943
 GameObject:
   m_ObjectHideFlags: 0

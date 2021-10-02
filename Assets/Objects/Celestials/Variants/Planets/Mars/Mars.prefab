@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1387641206328678850, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307424795725165464, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2307424795725165464, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: title
       value: "\uFEA6\uFEF3\uFEAE\uFEE4\uFEDF\uFE8D"
@@ -14,6 +22,18 @@ PrefabInstance:
     - target: {fileID: 2329098604825296619, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_Text
       value: "\uFEA6\uFEF3\uFEAE\uFEE4\uFEDF\uFE8D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219542070163070359, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596155050036305348, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596155050036305348, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6336094209958786517, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_Name
@@ -25,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.6
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41,15 +61,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -62,6 +82,18 @@ PrefabInstance:
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387568951185728873, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387568951185728873, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387568951185728873, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7387568951185728873, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.x

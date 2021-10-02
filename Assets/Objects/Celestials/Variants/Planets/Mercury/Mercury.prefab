@@ -12,6 +12,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2307424795725165464, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307424795725165464, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: title
       value: "\u062F\uFEAD\uFE8E\uFEC4\uFECB"
       objectReference: {fileID: 0}
@@ -61,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6675887921388646255, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_LocalRotation.w

@@ -21,23 +21,15 @@ using UnityEngine.EventSystems;
 
 namespace Default
 {
-    public class Sandbox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class Sandbox : MonoBehaviour
     {
-        [RuntimeInitializeOnLoadMethod]
-        public static void OnLoad()
+#if UNITY_EDITOR
+        [MenuItem("Sandbox/Execute")]
+        static void Execute()
         {
-
+            
         }
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Enter");
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            Debug.Log("Pointer Exit");
-        }
+#endif
     }
 
     public static class ExtensionMethods
