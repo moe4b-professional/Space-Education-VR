@@ -27,7 +27,7 @@ namespace Default
         [MenuItem("Sandbox/Execute")]
         static void Execute()
         {
-            
+
         }
 #endif
     }
