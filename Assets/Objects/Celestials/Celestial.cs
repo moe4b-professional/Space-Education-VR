@@ -50,15 +50,13 @@ namespace Default
             float transitionSpeed = 4f;
 
             Coroutine TransitionCoroutine;
-            public Coroutine Transition(bool isOn)
+            public Coroutine Transition(float target)
             {
                 TransitionCoroutine = celestial.StartCoroutine(Procedure());
                 return TransitionCoroutine;
                 IEnumerator Procedure()
                 {
-                    var target = isOn ? 1f : 0f;
-
-                    if (isOn) group.gameObject.SetActive(true);
+                    if (target > 0f) group.gameObject.SetActive(true);
 
                     while (true)
                     {
@@ -69,7 +67,7 @@ namespace Default
                         yield return new WaitForEndOfFrame();
                     }
 
-                    if (!isOn) group.gameObject.SetActive(false);
+                    if (target == 0f) group.gameObject.SetActive(false);
 
                     TransitionCoroutine = null;
                 }
@@ -80,8 +78,13 @@ namespace Default
             {
                 celestial = reference;
 
-                Transition(false);
+                Transition(0f);
 
+                Setup(celestial);
+            }
+
+            internal void Setup(Celestial celestial)
+            {
                 label.text = celestial.gameObject.name;
                 border.rectTransform.sizeDelta = Vector2.one * 280 / celestial.SizeRate;
                 border.pixelsPerUnitMultiplier = 6 * celestial.SizeRate;
@@ -89,14 +92,15 @@ namespace Default
 
             public void Reset()
             {
-                Transition(false);
+                Transition(0f);
             }
         }
 
         public bool IsSelected => Selection.Current == this;
 
-        void Awake()
+        void CalcaulateRequirements()
         {
+            //Size
             {
                 var scale = mesh.transform.localScale;
                 Size = (scale.x + scale.y + scale.z) / 3f;
@@ -104,8 +108,15 @@ namespace Default
             }
         }
 
+        void OnValidate()
+        {
+            CalcaulateRequirements();
+            UI.Setup(this);
+        }
+
         void Start()
         {
+            CalcaulateRequirements();
             UI.Initiate(this);
         }
 
@@ -113,7 +124,7 @@ namespace Default
         {
             if (IsSelected == false)
             {
-                UI.Transition(true);
+                UI.Transition(0.5f);
             }
         }
 
@@ -121,7 +132,7 @@ namespace Default
         {
             if (IsSelected == false)
             {
-                UI.Transition(false);
+                UI.Transition(0f);
             }
         }
 
@@ -135,7 +146,7 @@ namespace Default
 
         void Select()
         {
-
+            UI.Transition(1f);
         }
 
         void Deselect()
