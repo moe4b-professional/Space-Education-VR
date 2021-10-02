@@ -110,6 +110,8 @@ namespace Default
 
         void OnValidate()
         {
+            if (Application.isPlaying) return;
+
             CalcaulateRequirements();
             UI.Setup(this);
         }
