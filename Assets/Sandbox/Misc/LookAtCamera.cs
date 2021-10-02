@@ -36,7 +36,8 @@ namespace Default
         {
             var direction = (transform.position - camera.transform.position);
 
-            var rotation = Quaternion.LookRotation(direction, camera.transform.up);
+            var up = Vector3.Scale(camera.transform.up, Vector3.up);
+            var rotation = Quaternion.LookRotation(direction, up);
 
             transform.rotation = rotation;
         }

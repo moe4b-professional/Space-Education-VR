@@ -7,9 +7,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1387641206328678850, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307424795725165464, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: title
+      value: "\uFEAE\uFEE4\uFED8\uFEDF\uFE8D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329098604825296619, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_Text
+      value: "\uFEAE\uFEE4\uFED8\uFEDF\uFE8D"
+      objectReference: {fileID: 0}
     - target: {fileID: 5219542070163070359, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_Radius
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596155050036305348, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596155050036305348, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6336094209958786517, guid: 311ad814815234e41af9fb18c5ecf485, type: 3}
       propertyPath: m_Name

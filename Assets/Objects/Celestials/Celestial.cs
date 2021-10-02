@@ -25,6 +25,9 @@ namespace Default
     public class Celestial : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField]
+        string title = default;
+
+        [SerializeField]
         MeshRenderer mesh;
 
         public float Size { get; private set; }
@@ -45,6 +48,9 @@ namespace Default
 
             [SerializeField]
             Image border = default;
+
+            [SerializeField]
+            Button play = default;
 
             [SerializeField]
             float transitionSpeed = 4f;
@@ -82,21 +88,38 @@ namespace Default
             {
                 celestial = reference;
 
-                Transition(0f);
+                group.gameObject.SetActive(false);
+                play.gameObject.SetActive(false);
 
                 Setup(celestial);
+
+                play.onClick.AddListener(OnPlay);
             }
 
             internal void Setup(Celestial celestial)
             {
-                label.text = celestial.gameObject.name;
+                label.text = celestial.title;
                 border.rectTransform.sizeDelta = Vector2.one * 280 / celestial.SizeRate;
                 border.pixelsPerUnitMultiplier = 6 * celestial.SizeRate;
             }
 
-            public void Reset()
+            public void Select()
             {
+                play.gameObject.SetActive(true);
+
+                Transition(1f);
+            }
+
+            public void Deselect()
+            {
+                play.gameObject.SetActive(false);
+
                 Transition(0f);
+            }
+
+            void OnPlay()
+            {
+                Debug.Log("Play");
             }
         }
 
@@ -152,12 +175,12 @@ namespace Default
 
         void Select()
         {
-            UI.Transition(1f);
+            UI.Select();
         }
 
         void Deselect()
         {
-            UI.Reset();
+            UI.Deselect();
         }
 
         //Static Utility
