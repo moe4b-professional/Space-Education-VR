@@ -21,8 +21,11 @@ using Google.XR.Cardboard;
 
 namespace Default
 {
+	[DefaultExecutionOrder(-200)]
 	public class SpaceVRCore : MonoBehaviour
 	{
+		public static SpaceVRCore Instance { get; private set; }
+
 		[SerializeField]
 		FPSData targetFPS;
 		[Serializable]
@@ -37,6 +40,9 @@ namespace Default
             public int Physics => physics;
         }
 
+		[SerializeField]
+		AudioSource audioPlayer;
+
 		public static bool IsInVR
 		{
 			get
@@ -45,7 +51,12 @@ namespace Default
 			}
 		}
 
-		void Start()
+        void Awake()
+        {
+			Instance = this;
+		}
+
+        void Start()
 		{
 			QualitySettings.vSyncCount = 0;
 			Application.targetFrameRate = targetFPS.Rendering;
@@ -97,6 +108,12 @@ namespace Default
 			{
 				Api.UpdateScreenParams();
 			}
+		}
+
+		public void PlayInfoAudio(AudioClip clip)
+		{
+			audioPlayer.Stop();
+			audioPlayer.PlayOneShot(clip);
 		}
 	}
 }

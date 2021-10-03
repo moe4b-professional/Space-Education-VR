@@ -28,13 +28,16 @@ namespace Default
         string title = default;
 
         [SerializeField]
-        float size;
+        float size = default;
 
         [SerializeField]
-        MeshRenderer mesh;
+        AudioClip info = default;
 
         [SerializeField]
-        SphereCollider collider;
+        MeshRenderer mesh = default;
+
+        [SerializeField]
+        SphereCollider collider = default;
 
         [SerializeField]
         UIData _UI = default;
@@ -122,13 +125,15 @@ namespace Default
 
             void OnPlay()
             {
-                Debug.Log("Play");
+                Core.PlayInfoAudio(celestial.info);
             }
         }
 
         public float SizeRate { get; private set; }
 
         public bool IsSelected => Selection.Current == this;
+
+        static SpaceVRCore Core => SpaceVRCore.Instance;
 
         void Validate()
         {

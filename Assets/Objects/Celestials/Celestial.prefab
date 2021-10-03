@@ -510,8 +510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c97a0b95169154ea1380bab8f89089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: 
+  title: Celestial
   size: 20
+  info: {fileID: 8300000, guid: e8aa5b1243bbf294aba6506ff3c88c0c, type: 3}
   mesh: {fileID: 8560997702379150854}
   collider: {fileID: 5219542070163070359}
   _UI:
@@ -611,7 +612,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Celestial
 --- !u!1 &8016320045345221943
 GameObject:
   m_ObjectHideFlags: 0
