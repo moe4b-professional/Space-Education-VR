@@ -18,6 +18,7 @@ using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 using UnityEngine.EventSystems;
+using System.Threading.Tasks;
 
 namespace Default
 {
@@ -149,7 +150,17 @@ namespace Default
 
         void OnValidate()
         {
-            Validate();
+#if UNITY_EDITOR
+            EditorApplication.delayCall += Delay;
+            void Delay()
+            {
+                EditorApplication.delayCall -= Delay;
+
+                if (this == null) return;
+
+                Validate();
+            }
+#endif
         }
 
         void Start()

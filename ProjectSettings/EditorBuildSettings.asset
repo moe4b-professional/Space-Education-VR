@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Sandbox/Sandbox.unity
+    path: Assets/Constructs/Solar System/Solar System.unity
     guid: 02f9c2120e505b840ae0794bc0fc9178
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 52b66c5586d773442941069df32411cd, type: 2}
