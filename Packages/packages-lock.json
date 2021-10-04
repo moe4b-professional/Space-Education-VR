@@ -10,13 +10,6 @@
       },
       "hash": "d9f0aa2eb03eb544069ea7278048994e548e6d03"
     },
-    "com.moe-baker.toolbox": {
-      "version": "https://github.com/moe4b-packages/Toolbox.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "d5679b5dea57957512a9a2d3aecb6b79c59d6768"
-    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -104,13 +97,6 @@
         "com.unity.subsystemregistration": "1.0.6"
       },
       "url": "https://packages.unity.com"
-    },
-    "jillejr.newtonsoft.json-for-unity": {
-      "version": "13.0.102",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
