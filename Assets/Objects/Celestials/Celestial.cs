@@ -1,75 +1,64 @@
 using System;
-using System.IO;
-using System.Linq;
 using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.AI;
 
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEditorInternal;
 #endif
 
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
-
 using UnityEngine.EventSystems;
-using System.Threading.Tasks;
 
 namespace Default
 {
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+    #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     public class Celestial : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField]
-        string title = default;
+        private string title;
+        
+        [SerializeField]
+        private float size;
 
         [SerializeField]
-        float size = default;
+        private AudioClip info;
 
         [SerializeField]
-        AudioClip info = default;
+        private MeshRenderer mesh;
 
         [SerializeField]
-        MeshRenderer mesh = default;
+        private SphereCollider collider;
 
         [SerializeField]
-        SphereCollider collider = default;
-
-        [SerializeField]
-        UIData _UI = default;
+        private UIData _UI;
         public UIData UI => _UI;
         [Serializable]
         public class UIData
         {
             [SerializeField]
-            CanvasGroup group = default;
+            CanvasGroup group;
             public CanvasGroup Group => group;
 
             [SerializeField]
-            Text label = default;
+            Text label;
 
             [SerializeField]
-            Image border = default;
+            Image border;
 
             [SerializeField]
-            Button play = default;
+            Button play;
 
             [SerializeField]
             float transitionSpeed = 4f;
 
-            Coroutine TransitionCoroutine;
+            Coroutine transitionCoroutine;
             public Coroutine Transition(float target)
             {
-                if (TransitionCoroutine != null)
-                    celestial.StopCoroutine(TransitionCoroutine);
+                if (transitionCoroutine != null)
+                    celestial.StopCoroutine(transitionCoroutine);
 
-                TransitionCoroutine = celestial.StartCoroutine(Procedure());
-                return TransitionCoroutine;
+                transitionCoroutine = celestial.StartCoroutine(Procedure());
+                return transitionCoroutine;
 
                 IEnumerator Procedure()
                 {
@@ -79,25 +68,25 @@ namespace Default
                     {
                         group.alpha = Mathf.MoveTowards(group.alpha, target, transitionSpeed * Time.deltaTime);
 
-                        if (group.alpha == target) break;
+                        if (Mathf.Approximately(group.alpha, target)) break;
 
                         yield return new WaitForEndOfFrame();
                     }
 
                     if (target == 0f) group.gameObject.SetActive(false);
 
-                    TransitionCoroutine = null;
+                    transitionCoroutine = null;
                 }
             }
 
-            internal void Validate(Celestial celestial)
+            internal void Validate(Celestial reference)
             {
-                label.text = celestial.title;
-                border.rectTransform.sizeDelta = Vector2.one * 280 / celestial.SizeRate;
-                border.pixelsPerUnitMultiplier = 6 * celestial.SizeRate;
+                label.text = reference.title;
+                border.rectTransform.sizeDelta = Vector2.one * 280 / reference.SizeRate;
+                border.pixelsPerUnitMultiplier = 6 * reference.SizeRate;
             }
 
-            Celestial celestial;
+            private Celestial celestial;
             public void Start(Celestial reference)
             {
                 celestial = reference;
@@ -134,9 +123,9 @@ namespace Default
 
         public bool IsSelected => Selection.Current == this;
 
-        static SpaceVRCore Core => SpaceVRCore.Instance;
+        public static SpaceVRCore Core => SpaceVRCore.Instance;
 
-        void Validate()
+        private void Validate()
         {
             //Size
             {
@@ -148,7 +137,7 @@ namespace Default
             UI.Validate(this);
         }
 
-        void OnValidate()
+        private void OnValidate()
         {
 #if UNITY_EDITOR
             EditorApplication.delayCall += Delay;
@@ -163,7 +152,7 @@ namespace Default
 #endif
         }
 
-        void Start()
+        private void Start()
         {
             Validate();
             UI.Start(this);
@@ -193,12 +182,12 @@ namespace Default
             }
         }
 
-        void Select()
+        private void Select()
         {
             UI.Select();
         }
 
-        void Deselect()
+        private void Deselect()
         {
             UI.Deselect();
         }
@@ -218,5 +207,5 @@ namespace Default
             }
         }
     }
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+    #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 }

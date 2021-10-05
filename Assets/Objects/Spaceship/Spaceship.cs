@@ -1,54 +1,36 @@
-using System;
-using System.IO;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.AI;
-
-#if UNITY_EDITOR
-using UnityEditor;
-using UnityEditorInternal;
-#endif
-
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
-
 using UnityEngine.InputSystem;
 
 namespace Default
 {
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+    #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
 	public class Spaceship : MonoBehaviour
     {
         [SerializeField]
-        InputActionAsset input = default;
+        private InputActionAsset input;
         public InputActionAsset Input => input;
-
+        
         [SerializeField]
-        GameObject model;
-
+        private GameObject model;
+        
         #region Move
         [Header("Move")]
 
         [SerializeField]
-        float moveSpeed = 3.5f;
+        private float moveSpeed = 3.5f;
 
         [SerializeField]
-        float moveAcceleration = 15f;
+        private float moveAcceleration = 15f;
         [SerializeField]
-        float moveSmoothTime;
+        private float moveSmoothTime;
 
-        Vector3 moveVelocity;
+        private Vector3 moveVelocity;
 
-        void Move()
+        private void Move()
         {
             var power = Input["Spaceship/Power"].ReadValue<float>();
 
-            var target = transform.forward * power * moveSpeed;
+            var target = transform.forward * (power * moveSpeed);
 
             rigidbody.velocity = Vector3.SmoothDamp(rigidbody.velocity, target, ref moveVelocity, moveSmoothTime, moveAcceleration, Time.fixedDeltaTime);
         }
@@ -57,31 +39,31 @@ namespace Default
         #region Look
         [Header("Look")]
         [SerializeField]
-        float lookSpeed = 2f;
+        private float lookSpeed = 2f;
 
         [SerializeField]
-        float lookAcceleration = 5f;
+        private float lookAcceleration = 5f;
         [SerializeField]
-        float lookSmoothTime;
+        private float lookSmoothTime;
 
         [SerializeField]
-        float rollFactor;
+        private float rollFactor;
 
-        Vector3 lookDelta;
-        Vector3 lookVelocity;
+        private Vector3 lookDelta;
+        private Vector3 lookVelocity;
 
-        void Look()
+        private void Look()
         {
             var tilt = Input["Spaceship/Tilt"].ReadValue<float>();
             var pan = Input["Spaceship/Pan"].ReadValue<float>();
 
-#if UNITY_EDITOR
+            #if UNITY_EDITOR
             if(Keyboard.current[Key.LeftAlt].isPressed)
             {
                 tilt = 0f;
                 pan = 0f;
             }
-#endif
+            #endif
 
             SetJoystickModel(tilt, pan);
 
@@ -97,6 +79,7 @@ namespace Default
             transform.Rotate(up, lookDelta.y * Time.deltaTime, Space.World);
             transform.Rotate(Vector3.right, -lookDelta.x * Time.deltaTime, Space.Self);
 
+            //Rotate Ship Model
             {
                 var angles = model.transform.localEulerAngles;
                 angles.z = -Mathf.LerpUnclamped(0f, rollFactor, lookDelta.y / 180f);
@@ -109,9 +92,9 @@ namespace Default
 
         #region Joystic
         [SerializeField]
-        Transform joystick;
+        private Transform joystick;
 
-        void SetJoystickModel(float x, float y)
+        private void SetJoystickModel(float x, float y)
         {
             x = Mathf.Clamp(x , -1, 1);
             y = Mathf.Clamp(y, -1, 1);
@@ -122,35 +105,35 @@ namespace Default
             joystick.localRotation = Quaternion.RotateTowards(joystick.localRotation, target, 180f * Time.deltaTime);
         }
         #endregion
-
-        Rigidbody rigidbody;
-
-        void Awake()
+        
+        private  Rigidbody rigidbody;
+        
+        private void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();
         }
 
-        void Start()
+        private void Start()
         {
             input.Enable();
 
             input["VR/Recenter"].performed += Recenter;
         }
 
-        void LateUpdate()
+        private void LateUpdate()
         {
             Look();
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             Move();
         }
 
-        void Recenter(InputAction.CallbackContext context)
+        public void Recenter(InputAction.CallbackContext context)
         {
             Google.XR.Cardboard.Api.Recenter();
         }
     }
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+    #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 }

@@ -1,62 +1,44 @@
 using System;
-using System.IO;
-using System.Linq;
 using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.AI;
 
-#if UNITY_EDITOR
-using UnityEditor;
-using UnityEditorInternal;
-#endif
-
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
 using UnityEngine.XR.Management;
 using Google.XR.Cardboard;
 
 namespace Default
 {
-	[DefaultExecutionOrder(-200)]
+	[DefaultExecutionOrder(DefaultExecutionOrder)]
 	public class SpaceVRCore : MonoBehaviour
 	{
+		public const int DefaultExecutionOrder = -200;
+		                                                                                                                
 		public static SpaceVRCore Instance { get; private set; }
-
+		
 		[SerializeField]
-		FPSData targetFPS;
+		private FPSData targetFPS;
 		[Serializable]
 		public class FPSData
-        {
-			[SerializeField]
-            int rendering = 60;
-            public int Rendering => rendering;
-
-			[SerializeField]
-            int physics = 60;
-            public int Physics => physics;
-        }
-
-		[SerializeField]
-		AudioSource audioPlayer;
-
-		public static bool IsInVR
 		{
-			get
-			{
-				return XRGeneralSettings.Instance.Manager.isInitializationComplete;
-			}
-		}
+			[SerializeField]
+			private int rendering = 60;
+			public int Rendering => rendering;
 
-        void Awake()
+			[SerializeField]
+			private int physics = 60;
+			public int Physics => physics;
+		}
+		
+		[SerializeField]
+		private AudioSource audioPlayer;
+		
+		public static bool IsInVR => XRGeneralSettings.Instance.Manager.isInitializationComplete;
+
+        private void Awake()
         {
 			Instance = this;
 		}
 
-        void Start()
+        private void Start()
 		{
 			QualitySettings.vSyncCount = 0;
 			Application.targetFrameRate = targetFPS.Rendering;
@@ -64,29 +46,24 @@ namespace Default
 
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 			Screen.brightness = 1.0f;
-
-			switch (Application.platform)
-			{
-				case RuntimePlatform.Android:
-				case RuntimePlatform.IPhonePlayer:
-					InitializeVR();
-					break;
-			}
-
+			
 			//Disable Renderers Shadows & Motion Vectors
 			{
 				var renderers = FindObjectsOfType<Renderer>();
 
-				foreach (var renderer in renderers)
+				for (var i = 0; i < renderers.Length; i++)
 				{
-					renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-					renderer.receiveShadows = false;
-					renderer.motionVectorGenerationMode = MotionVectorGenerationMode.ForceNoMotion;
+					renderers[i].shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+					renderers[i].receiveShadows = false;
+					renderers[i].motionVectorGenerationMode = MotionVectorGenerationMode.ForceNoMotion;
 				}
 			}
+			
+			if(Application.isMobilePlatform)
+				InitializeVR();
 		}
 
-		void InitializeVR()
+        private void InitializeVR()
 		{
 			StartCoroutine(Coroutine());
 			IEnumerator Coroutine()
@@ -102,7 +79,7 @@ namespace Default
 			}
 		}
 
-		void Update()
+        private void Update()
 		{
 			if (IsInVR)
 			{
