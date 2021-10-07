@@ -29,7 +29,8 @@ namespace Default
 		}
 		
 		[SerializeField]
-		private AudioSource audioPlayer;
+		private CassettePlayer cassettePlayer;
+		public CassettePlayer CassettePlayer => cassettePlayer;
 		
 		public static bool IsInVR => XRGeneralSettings.Instance.Manager.isInitializationComplete;
 
@@ -85,12 +86,6 @@ namespace Default
 			{
 				Api.UpdateScreenParams();
 			}
-		}
-
-		public void PlayInfoAudio(AudioClip clip)
-		{
-			audioPlayer.Stop();
-			audioPlayer.PlayOneShot(clip);
 		}
 	}
 }

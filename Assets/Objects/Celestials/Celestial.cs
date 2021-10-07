@@ -115,7 +115,7 @@ namespace Default
 
             void OnPlay()
             {
-                Core.PlayInfoAudio(celestial.info);
+                Core.CassettePlayer.Play(celestial.info);
             }
         }
 
