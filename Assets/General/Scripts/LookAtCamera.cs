@@ -23,20 +23,22 @@ namespace Default
 	public class LookAtCamera : MonoBehaviour
     {
         [SerializeField]
-        Vector3 offset = Vector3.zero;
+        private Vector3 offset = Vector3.zero;
 
-        Camera camera;
+        private Camera camera;
+        private Transform target;
 
         void Awake()
         {
             camera = Camera.main;
+            target = camera.transform;
         }
 
-        void Update()
+        void LateUpdate()
         {
-            var direction = (transform.position - camera.transform.position);
+            var direction = (transform.position - target.position);
 
-            var up = Vector3.Scale(camera.transform.up, Vector3.up);
+            var up = Vector3.Scale(target.up, Vector3.up);
             var rotation = Quaternion.LookRotation(direction, up);
 
             transform.rotation = rotation;
