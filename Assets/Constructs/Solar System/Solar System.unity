@@ -5021,7 +5021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFPS:
-    rendering: -1
+    rendering: 60
     physics: 60
   cassettePlayer: {fileID: 819952575}
 --- !u!1001 &1136431699
