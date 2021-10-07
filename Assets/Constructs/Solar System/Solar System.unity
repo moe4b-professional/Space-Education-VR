@@ -3961,12 +3961,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
     insert: {fileID: 8300000, guid: 22e3cae426b8368479869d34c5e0a435, type: 3}
-    noise: {fileID: 8300000, guid: b5631cfd8e89850429a6991cb764cc25, type: 3}
     button: {fileID: 8300000, guid: 859d01840134b9e4c9747711b9d776a8, type: 3}
     eject: {fileID: 8300000, guid: 21021d2d0650a6d418bfaf542beb531b, type: 3}
+    noise: {fileID: 8300000, guid: b5631cfd8e89850429a6991cb764cc25, type: 3}
   sources:
-    noise: {fileID: 958210886}
     clip: {fileID: 937987361}
+    noise: {fileID: 958210886}
 --- !u!1 &825167498
 GameObject:
   m_ObjectHideFlags: 0
