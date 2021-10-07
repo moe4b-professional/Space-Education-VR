@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,6 +30,8 @@ namespace Default
         private void Move()
         {
             var power = Input["Spaceship/Power"].ReadValue<float>();
+
+            SampleThruster(rigidbody.velocity.magnitude / moveSpeed);
 
             var target = transform.forward * (power * moveSpeed);
 
@@ -103,6 +106,27 @@ namespace Default
             var target = Quaternion.Euler(angles);
 
             joystick.localRotation = Quaternion.RotateTowards(joystick.localRotation, target, 180f * Time.deltaTime);
+        }
+        #endregion
+        
+        #region Audio
+        [Header("Audio")]
+        [SerializeField]
+        private AudioSource thruserAudio;
+
+        [SerializeField]
+        private Vector2 thrusterAudioPitchRange;
+        
+        [SerializeField]
+        private Vector2 thrusterAudioVolumeRange;
+
+        void SampleThruster(float rate)
+        {
+            var pitch = Mathf.Lerp(thrusterAudioPitchRange.x, thrusterAudioPitchRange.y, rate);
+            var volume = Mathf.Lerp(thrusterAudioVolumeRange.x, thrusterAudioVolumeRange.y, rate);
+
+            thruserAudio.pitch = pitch;
+            thruserAudio.volume = volume;
         }
         #endregion
         
