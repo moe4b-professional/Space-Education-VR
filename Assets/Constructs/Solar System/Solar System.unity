@@ -3822,8 +3822,8 @@ MonoBehaviour:
   rollFactor: 20
   joystick: {fileID: 1044766173}
   thruserAudio: {fileID: 731586861}
-  thrusterAudioPitchRange: {x: 0, y: 0.1}
-  thrusterAudioVolumeRange: {x: 0, y: 0.3}
+  thrusterAudioPitchRange: {x: 0.05, y: 0.1}
+  thrusterAudioVolumeRange: {x: 0.1, y: 0.2}
 --- !u!54 &735352256
 Rigidbody:
   m_ObjectHideFlags: 0
