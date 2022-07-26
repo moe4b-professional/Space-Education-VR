@@ -113,9 +113,12 @@ namespace Default
                 Transition(0f);
             }
 
-            void OnPlay()
+            internal void OnPlay()
             {
-                Core.CassettePlayer.Play(celestial.info);
+                if (Core.CassettePlayer.Current == celestial.info)
+                    Core.CassettePlayer.Stop();
+                else
+                    Core.CassettePlayer.Play(celestial.info);
             }
         }
 
@@ -180,6 +183,8 @@ namespace Default
             {
                 Selection.Set(this);
             }
+
+            UI.OnPlay();
         }
 
         private void Select()

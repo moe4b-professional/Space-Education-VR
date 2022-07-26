@@ -51,11 +51,14 @@ namespace Default
 			}
 		}
 
+		public AudioClip Current { get; private set; }
+
 		public Coroutine Play(AudioClip clip)
 		{
-			StopAllCoroutines();
-			sources.Stop();
-			
+			Stop();
+
+			Current = clip;
+
 			return StartCoroutine(Procedure());
 			IEnumerator Procedure()
 			{
@@ -67,7 +70,16 @@ namespace Default
 				EndNoise();
 				
 				yield return PlayClip(Clips.Eject);
+
+				Current = null;
 			}
+		}
+
+		public void Stop()
+        {
+			StopAllCoroutines();
+			sources.Stop();
+			Current = null;
 		}
 
 		private Coroutine PlayClip(AudioClip clip, float timeOffset = 0f)

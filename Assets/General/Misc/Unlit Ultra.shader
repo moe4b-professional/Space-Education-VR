@@ -6,6 +6,7 @@
 Shader "Unlit/Ultra" {
     Properties{
         _MainTex("Base (RGB)", 2D) = "white" {}
+        [HDR]
         _Color("Base Color", Color) = (1,1,1,1)
     }
         SubShader{

@@ -32,6 +32,7 @@ namespace Default
         int segments = default;
 
         [SerializeField]
+        [ColorUsage(true, true)]
         Color color = Color.white;
 
         MaterialPropertyBlock block;

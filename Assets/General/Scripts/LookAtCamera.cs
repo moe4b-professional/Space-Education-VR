@@ -25,23 +25,21 @@ namespace Default
         [SerializeField]
         private Vector3 offset = Vector3.zero;
 
-        private Camera camera;
-        private Transform target;
-
-        void Awake()
-        {
-            camera = Camera.main;
-            target = camera.transform;
-        }
+        private Camera camera => Camera.main;
 
         void LateUpdate()
         {
-            var direction = (transform.position - target.position);
+            if(camera)
+            {
+                var target = camera.transform;
 
-            var up = Vector3.Scale(target.up, Vector3.up);
-            var rotation = Quaternion.LookRotation(direction, up);
+                var direction = (transform.position - target.position);
 
-            transform.rotation = rotation;
+                var up = Vector3.Scale(target.up, Vector3.up);
+                var rotation = Quaternion.LookRotation(direction, up);
+
+                transform.rotation = rotation;
+            }
         }
     }
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword

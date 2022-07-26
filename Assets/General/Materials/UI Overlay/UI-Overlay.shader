@@ -84,6 +84,8 @@ Shader "UI/Overlay"
                 {
                     half4 color = tex2D(_MainTex, IN.texcoord) * IN.color;
                     clip(color.a - 0.01);
+                    return IN.color;
+                    return _Color;
                     return color;
                 }
             ENDCG

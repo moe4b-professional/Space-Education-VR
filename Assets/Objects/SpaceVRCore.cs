@@ -41,7 +41,7 @@ namespace Default
 
         private void Start()
 		{
-			QualitySettings.vSyncCount = 0;
+			QualitySettings.vSyncCount = 2;
 			Application.targetFrameRate = targetFPS.Rendering;
 			Time.fixedDeltaTime = 1f / targetFPS.Physics;
 
